@@ -21,7 +21,7 @@ const Signup = () => {
   const [pic, setPic] = useState();
   const [picLoading, setPicLoading] = useState(false);
   const toast = useToast();
-  const naviagte =  useNavigate()
+  const navigate =  useNavigate()
 
   const handleClick = () => setShow(!show);
 
@@ -117,7 +117,7 @@ const Signup = () => {
       });
       localStorage.setItem('userInfo', JSON.stringify(data));
       setPicLoading(false);
-      naviagte.push()
+      navigate("/")
 
     } catch (error) {
       toast({

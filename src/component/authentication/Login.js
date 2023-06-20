@@ -12,7 +12,7 @@ import {
   useToast,
 
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ const Login = () => {
   const [password, setPassword] = useState();
   const toast = useToast();
   const [picLoading, setPicLoading] = useState(false);
-  const naviagte =  useNavigate()
+  const navigate =  useNavigate()
 
 
 
@@ -39,7 +39,7 @@ const Login = () => {
       return;
     }
     try{
-      const config = {
+      const config ={
         headers : {
           "Content-type" : "application/json",
 
@@ -52,11 +52,11 @@ const Login = () => {
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       localStorage.setItem('userInfo', JSON.stringify(data));
       setPicLoading(false);
-      naviagte.push("/chats")
+      navigate("/chats")
   } catch (error) {
     toast({
       title: "ERROR",
