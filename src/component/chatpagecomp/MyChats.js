@@ -6,7 +6,7 @@ import { AddIcon } from '@chakra-ui/icons';
 import ChatLoading from './ChatLoading';
 import { getSender } from '../../config2/ChatLogic';
 import GroupChatModal from './GroupChatModal';
-const MyChats = ({fetchAgain}) => {
+const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
 
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
@@ -42,8 +42,7 @@ const MyChats = ({fetchAgain}) => {
     // eslint-disable-next-line
   }, [fetchAgain]);
 
-  
-  return (<>
+  return (
     <Box
       d={{ base: selectedChat ? "none" : "flex", md: "flex" }}
       flexDir="column"
@@ -106,9 +105,9 @@ const MyChats = ({fetchAgain}) => {
                 {chat.latestMessage && (
                   <Text fontSize="xs">
                     <b>{chat.latestMessage.sender.name} : </b>
-                    {/* {chat.latestMessage.content.length > 50
+                    {chat.latestMessage.content.length > 50
                       ? chat.latestMessage.content.substring(0, 51) + "..."
-                      : chat.latestMessage.content} */}
+                      : chat.latestMessage.content}
                   </Text>
                 )}
               </Box>
@@ -119,10 +118,7 @@ const MyChats = ({fetchAgain}) => {
         )}
       </Box>
     </Box>
+  );
+};
 
-  </>
-   
-  )
-}
-
-export default MyChats
+export default MyChats;
